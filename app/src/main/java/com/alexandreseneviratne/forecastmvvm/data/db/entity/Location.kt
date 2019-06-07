@@ -1,4 +1,4 @@
-package com.alexandreseneviratne.forecastmvvm.data.response
+package com.alexandreseneviratne.forecastmvvm.data.db.entity
 
 
 import com.google.gson.annotations.SerializedName

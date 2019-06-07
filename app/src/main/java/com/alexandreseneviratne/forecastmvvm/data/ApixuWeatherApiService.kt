@@ -1,7 +1,6 @@
 package com.alexandreseneviratne.forecastmvvm.data
 
-import com.alexandreseneviratne.forecastmvvm.data.response.CurrentWeatherResponse
-import kotlinx.coroutines.Deferred
+import com.alexandreseneviratne.forecastmvvm.data.network.response.CurrentWeatherResponse
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
