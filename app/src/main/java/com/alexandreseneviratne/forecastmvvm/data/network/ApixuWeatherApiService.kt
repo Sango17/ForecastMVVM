@@ -1,4 +1,4 @@
-package com.alexandreseneviratne.forecastmvvm.data
+package com.alexandreseneviratne.forecastmvvm.data.network
 
 import com.alexandreseneviratne.forecastmvvm.data.network.response.CurrentWeatherResponse
 import okhttp3.Interceptor
@@ -23,7 +23,9 @@ interface ApixuWeatherApiService {
     ): CurrentWeatherResponse
 
     companion object {
-        operator fun invoke(): ApixuWeatherApiService {
+        operator fun invoke(
+            connectivityInterceptor: ConnectivityInterceptor
+        ): ApixuWeatherApiService {
             val requestInterceptor = Interceptor {chain ->
                 val url = chain.request()
                     .url()
@@ -41,6 +43,7 @@ interface ApixuWeatherApiService {
 
             val okHttpClient = OkHttpClient.Builder()
                 .addInterceptor(requestInterceptor)
+                .addInterceptor(connectivityInterceptor)
                 .build()
 
             return Retrofit.Builder()
