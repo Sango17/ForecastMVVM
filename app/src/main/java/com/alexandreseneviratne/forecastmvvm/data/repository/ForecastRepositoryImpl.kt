@@ -43,7 +43,7 @@ class ForecastRepositoryImpl(
 
     private suspend fun fetchCurrentWeather() {
         weatherNetworkDataSource.fetchCurrentWeather(
-            "San Francisco",
+            "Livry_Gargan",
             Locale.getDefault().language
         )
     }
